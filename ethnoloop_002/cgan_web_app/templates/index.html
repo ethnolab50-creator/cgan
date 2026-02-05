@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGAN - Conditional GAN for MNIST Digits</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 Conditional GAN (CGAN)</h1>
+            <p>Generate Handwritten Digits with AI</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="card">
+                    <h2>⚙️ Model Training</h2>
+                    <div class="training-controls">
+                        <div class="form-group">
+                            <label for="epochs">Training Epochs:</label>
+                            <input type="number" id="epochs" value="5" min="1" max="50">
+                        </div>
+                        <button id="train-btn" class="btn btn-primary">
+                            ▶️ Train Model
+                        </button>
+                        <button id="load-btn" class="btn btn-secondary">
+                            📁 Load Model
+                        </button>
+                    </div>
+                    <div id="training-status" class="status-panel">
+                        <div class="status-item">
+                            <span class="status-label">Status:</span>
+                            <span id="status-text" class="status-value">Not trained</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Device:</span>
+                            <span id="device-text" class="status-value">Unknown</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>✨ Generate Digits</h2>
+                    <div class="generation-controls">
+                        <div class="form-group">
+                            <label for="digit-select">Select Digit:</label>
+                            <select id="digit-select" class="digit-selector">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="num-samples">Number of Samples:</label>
+                            <input type="number" id="num-samples" value="5" min="1" max="10">
+                        </div>
+                        <button id="generate-btn" class="btn btn-success">
+                            ✨ Generate
+                        </button>
+                        <button id="generate-all-btn" class="btn btn-info">
+                            📊 Generate All Digits
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="card">
+                    <h2>🖼️ Generated Images</h2>
+                    <div id="results-container" class="results-container">
+                        <div class="placeholder">
+                            📷
+                            <p>Train the model and generate digits to see results here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training Progress Modal -->
+        <div id="training-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🔄 Training in Progress</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div id="training-info" class="training-info">
+                        Initializing training...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Modal -->
+        <div id="loading-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-body">
+                    🔄
+                    <p id="loading-text">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
