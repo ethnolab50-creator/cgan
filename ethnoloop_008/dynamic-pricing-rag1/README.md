@@ -4,23 +4,8 @@ emoji: 🚕
 colorFrom: blue
 colorTo: purple
 sdk: gradio
-sdk_version: "4.0"
-python_version: "3.11"
 app_file: app.py
 pinned: false
-license: mit
-short_description: AI-powered dynamic pricing analysis with natural language queries
-models:
-  - mistralai/Mistral-7B-Instruct-v0.1
-datasets:
-  - dynamic_pricing
-tags:
-  - rag
-  - nlp
-  - pricing
-  - langchain
-  - gradio
-  - retrieval-augmented-generation
 ---
 
 # Dynamic Pricing RAG Model
